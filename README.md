@@ -13,6 +13,25 @@ and enjoy original character designs.
 - Cute animations, sound effects, and UI  
 - Works on iOS & Android
 
+## Gameplay Interaction Proposal
+- Allow players to tap enemy pieces directly when those pieces are in a legal capture state.
+- If a tap is valid, execute a capture animation and remove the enemy piece from the board.
+- Set the stage clear condition to: **tap-capture the enemy King**.
+- Show a short feedback flow after King capture:
+  - "Checkmate!" banner
+  - clear animation / SFX
+  - stage clear dialog (`Next`, `Retry`, `Back to Map`)
+
+### Recommended Tap Flow
+1. Tap one of your pieces to show legal move/capture targets.
+2. Tap a highlighted enemy piece to capture.
+3. If the captured piece is the King, trigger clear immediately.
+
+### Safety / UX Notes
+- Ignore taps on non-highlighted enemy pieces (no accidental invalid actions).
+- Add optional haptic or sound feedback for valid taps to improve responsiveness.
+- Keep a small `Undo` or `Reset` option for puzzle users who mis-tap.
+
 ## Tech Stack
 - Flutter 3.x
 - Provider (state management)
@@ -22,4 +41,3 @@ and enjoy original character designs.
 - Responsive UI, custom painting, tween animations
 
 ## Folder Structure
-
